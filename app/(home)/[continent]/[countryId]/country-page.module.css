@@ -1,0 +1,23 @@
+.facts_container {
+  margin-left: 50px;
+}
+
+.back_button {
+  height: 30px;
+}
+
+.back_button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: $mantine-breakpoint-sm) {
+  .facts_container {
+    margin: 0;
+    padding: 1rem 1rem;
+  }
+
+  .facts_container h1 {
+    margin: 0;
+    font-size: 26px;
+  }
+}

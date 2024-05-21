@@ -1,0 +1,10 @@
+.appshell_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+.site_title {
+  font-size: 26px;
+}

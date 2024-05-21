@@ -1,5 +1,6 @@
 import CountryButton from "../../components/country-button";
 import { getContinents, getCountriesByContinent } from "../../lib/data";
+import styles from "./continent-page.module.css";
 
 export default async function Page({
   params,
@@ -17,9 +18,8 @@ export default async function Page({
   // use the code to fetch countries in that continent
   const countries = await getCountriesByContinent(code);
 
-  console.log(countries);
   return (
-    <div>
+    <div className={styles.continent_container}>
       {countries.map((country) => {
         return (
           <CountryButton

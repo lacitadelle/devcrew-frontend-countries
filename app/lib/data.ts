@@ -74,7 +74,9 @@ export async function getCountryFacts(countryCode: string) {
       },
       body: JSON.stringify({
         query: `{
-          country(code: "${countryCode}") {
+          country(code: "${countryCode.toUpperCase()}") {
+            emoji
+            code
             name
             native
             capital
@@ -82,7 +84,13 @@ export async function getCountryFacts(countryCode: string) {
               name
             }
             currency
-            languages
+            phone
+            languages {
+              code
+              name
+              native
+              rtl
+            }
             awsRegion
           }
         }`,
@@ -94,6 +102,7 @@ export async function getCountryFacts(countryCode: string) {
     }
 
     const data = await response.json();
+
     return data.data.country;
   } catch (e) {
     console.error("Error fetching data:", e);

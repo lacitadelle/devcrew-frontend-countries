@@ -1,0 +1,14 @@
+.link {
+  all: unset;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #69a4e6;
+}
+
+.link_container p {
+  font-size: 18px;
+  margin-right: 8px;
+}

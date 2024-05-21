@@ -3,11 +3,12 @@ import { NavLink } from "@mantine/core";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getContinents } from "../lib/data";
+import styles from "./sidenav.module.css";
 
 export default function SideNav() {
   const continents = getContinents();
   const pathname = usePathname();
-  console.log(pathname);
+
   return (
     <div>
       {continents.map((continent) => {
@@ -22,6 +23,9 @@ export default function SideNav() {
             href={continentHref}
             label={continent.name}
             active={pathname === continentHref}
+            classNames={{
+              label: styles.navlink_label,
+            }}
           />
         );
       })}

@@ -1,0 +1,12 @@
+.continent_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem 5rem;
+}
+
+@media (max-width: $mantine-breakpoint-sm) {
+  .continent_container {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem;
+  }
+}

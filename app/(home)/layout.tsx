@@ -1,7 +1,8 @@
 "use client";
-import { AppShell } from "@mantine/core";
+import { AppShell, Burger } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import SideNav from "../components/sidenav";
+import styles from "./home-layout.module.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
@@ -11,8 +12,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       header={{ height: 60 }}
       navbar={{ width: 300, breakpoint: "sm", collapsed: { mobile: !opened } }}
     >
-      <AppShell.Header>
-        <h1>🧭 World Explorer</h1>
+      <AppShell.Header className={styles.appshell_header}>
+        <h1 className={styles.site_title}>🧭 World Explorer</h1>
+        <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
       </AppShell.Header>
       <AppShell.Navbar>
         <SideNav />
