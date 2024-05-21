@@ -44,7 +44,7 @@ export default async function Page({
       </p>
       <h2>Languages</h2>
       <ol>
-        {country.languages.map((language, index) => (
+        {country.languages.map((language: {name: string, code: string, native: string}, index: number) => (
           <li key={index}>
             <p>
               <strong>Name:</strong> {language.name}
